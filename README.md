@@ -1,4 +1,4 @@
-# [Respnsive Login Webpage](https://io-technologies.netlify.com/)
+# [Responsive Login Webpage](https://io-technologies.netlify.com/)
 
 Made for IO Technologies
 

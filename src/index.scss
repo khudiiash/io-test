@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto',serif;
+}
+input {
+    background: transparent;
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1em 0;
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 1em;
+    box-shadow: inset 0 0 0 50px rgb(4,16,44);
+    caret-color: rgb(1,150,207);
+    transition: border-bottom .5s;
+    
+    &:not(:placeholder-shown) {
+    -webkit-text-fill-color: #fff;
+    }
+    &::placeholder {
+    font-size: large;
+    }
+    &:focus,&:not([value='']) {
+    outline: none;
+    background: rgba(0, 0, 0, 0);
+    border-bottom: 1px solid rgb(0,187,150);
+    }
+    &[type='password'] {
+        font-size: 25px;
+        padding-bottom: .7em;
+        letter-spacing: 2px;
+        &:focus,&:not([value='']) {
+            border-bottom: 1px solid rgb(1,150,207);
+        }
+    }
+  
+    &:placeholder-shown {
+    letter-spacing: normal;
+    }
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    .row {
+      display: flex;
+      width: 100%;
+      height: 80px;   
+    }            
+}
+.feedback {
+    color: black;
+    position: absolute;
+    right: -48%;    
+    background: rgb(238,239,241);
+    width: 125px;
+    height: fit-content;
+    border-radius: 4px;
+    padding: 10px;
+    color: rgba(7, 7, 7, 0.5);
+    font-size: 14px;
+    margin-top: 15px;
+    &::before {
+      content: "";
+      position: absolute;
+      border-radius: 15px;
+      top: 11%;
+      left: -11%;
+      width: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 10px solid transparent;
+      border-right: 10px solid rgb(238,239,241);
+    }
+}
+.heading {
+    color: white;
+    font-size: 35px;
+    font-weight: 400;
+    margin-bottom: -15px;
+}
+.subheading {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 19px;
+    font-weight: 300;
+    margin: 20px 0;
+}
+.submit-btn {
+    height: 50px;
+    width: 100%;
+    background: linear-gradient(to right,rgb(0,107,217),rgb(0,166,220));
+    border: none;
+    margin-top: 35px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 750;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover > .arrow {
+    left: 15px;
+    }
+}
+.error {
+    border-bottom: 1px solid rgb(216,11,67) !important;
+    -webkit-animation: shake 0.2s ease-in-out 0s 2;
+    animation: shake 0.2s ease-in-out 0s 2;
+}
+::-webkit-scrollbar-track
+{
+  background-color:rgba(255, 255, 255, 0);
+}
+
+::-webkit-scrollbar
+{
+  background-color:rgba(255, 255, 255, 0);
+  width:8px
+}
+::-webkit-scrollbar-corner {
+    display: none;
+}
+::-webkit-scrollbar-thumb
+{
+  background-color:#babac0;
+  border-radius:16px;
+  padding: 5px;
+  &:hover {
+    background-color:#a0a0a5;
+  }
+  
+}
+
+@-webkit-keyframes shake {
+    0% { margin-left: 0rem; }
+    25% { margin-left: 0.5rem; }
+    75% { margin-left: -0.5rem; }
+    100% { margin-left: 0rem; }
+}
+
+@keyframes shake {
+    0% { margin-left: 0rem; }
+    25% { margin-left: 0.5rem; }
+    75% { margin-left: -0.5rem; }
+    100% { margin-left: 0rem; }
+}
+
+.arrow {
+    width: 23px;
+    height: 12px;
+    position: relative;
+    left: 5px;
+    transition: 500ms;
+}
+
+@media screen and (max-width: 1000px ) {
+    input {
+        font-size: large;
+    }
+    .feedback {
+        display: none;
+    }
+    .submit-btn {
+        margin-top: 20px;
+        height: 35px;
+        font-weight: normal;
+        font-size: 15px;
+    }
+    .row {
+        height: 50px !important;
+    }
+    .heading {
+        margin-bottom: 0px;
+    }
+    .subheading {
+        height: 35px;
+        margin: 5px 0;
+    }
+    .form {
+        margin-top: 0vh;
+    }
+} 
+@media screen and (max-width: 600px ) {
+    .submit-btn {
+        margin-top: 35px;
+        height: 45px;
+        font-size: 16px;
+    }
+    .row {
+        height: 80px !important;
+    }
+    .form {
+        margin-top: -5vh;
+    }
+} 

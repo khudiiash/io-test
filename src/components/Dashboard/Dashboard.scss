@@ -1,0 +1,57 @@
+.dashboard {
+    .heading, .subheading {
+        text-align: center;
+    }
+    &__projects {
+        height: 300px;
+        overflow: scroll;
+        margin-top: 45px;
+        &__item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.4);
+            height: 55px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: .2s;
+            &:hover{
+                color: white;
+            }
+        }
+    }
+}
+@media screen and (max-width:1000px) {
+    .dashboard {
+        margin: -10vh 0 0 -10vw;
+        width: 90vw;
+        .heading {
+            font-size: 26px;
+        }
+        &__projects {
+            height: 40vh;
+            margin-top: 5px;
+            &__item {
+                font-size: large;
+                height: 65px;
+            }
+        }
+    }
+}
+@media screen and (max-width:600px) {
+    .dashboard {
+        margin: -30vh 0 0 -10vw;
+        width:100vw;
+
+        &__projects {
+            width: 100vw;
+            margin: 0;
+            height: 45vh;
+            overflow: scroll;
+            margin-top: 10px;
+            &__item {
+                height: 75px;
+            }
+        }
+    }
+}

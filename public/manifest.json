@@ -1,0 +1,8 @@
+{
+    "name": "IO Technologies Test Application",
+    "short_name": "Test",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "rgb(4,16,44);",
+    "description": "A test app for IO Technologies"
+   }

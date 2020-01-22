@@ -1,0 +1,53 @@
+.reset-form {
+    &__back {
+        position: relative;
+        bottom: 100px;
+        padding: 15px 15px 15px 0;
+        &:hover > .arrow {
+            margin-left: -10px;
+        }
+    }
+    .arrow {
+        width: 46px;
+        height: 24px;
+        -webkit-transform: rotate(180deg); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+        -ms-transform: rotate(180deg); /* IE 9 */
+        transform: rotate(180deg); /* IE 10, Fx 16+, Op 12.1+ */
+    }
+    .form {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .reset-form {
+        width: 60%;
+        margin: 0 20%;
+        margin-top: -15vh;         
+        margin-left: 15vw;   
+        .heading {
+            font-size: 23px;
+        }
+        &__back {
+            bottom: -15vh;
+            right: 115px;
+        }
+    }
+}
+@media screen and (max-width:600px) {
+    .reset-form {
+        width: 80vw;
+
+        margin: 0 10vw;
+        margin-top: -15vh;        
+        margin-left: 0;   
+        .heading {
+            font-size: 1.5em;
+        }
+        &__back {
+            bottom: 100px;
+            right: 10px;
+        }
+    }
+}
+

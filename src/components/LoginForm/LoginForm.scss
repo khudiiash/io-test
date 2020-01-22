@@ -32,10 +32,10 @@
      
       &__text {
         .heading {
-          font-size: 25px;
+          font-size: 28px;
         }
         .subheading {
-          font-size: 18px;
+          font-size: 15px;
         }
         display: flex;
         flex-direction: column;
@@ -79,4 +79,13 @@
     }
   }
   
+}
+
+@media screen and (max-width:1000px) and (min-height:1000px) {
+  .login-form {
+    &__text {
+     margin-top: -10%;
+    }
+    
+  }
 }

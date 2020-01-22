@@ -3,8 +3,9 @@
         position: relative;
         bottom: 100px;
         padding: 15px 15px 15px 0;
+        margin-left: -10px;
         &:hover > .arrow {
-            margin-left: -10px;
+            transform: translateX(-10px) rotate(180deg);
         }
     }
     .arrow {

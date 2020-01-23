@@ -35,17 +35,17 @@ function LoginPage({reset,dashboard,history}) {
   const moveContent = useSpring({
     to: {transform: 'translateX(0)'},
     from: {transform: 'translateX(-300px)'},
-    config: { duration: 4000, easing: easings.easeElastic}
+    config: { duration: 5000, friction: 55,tension: 50,easing: easings.easeElastic}
   })
   const moveGradient = useSpring({
     to: {marginLeft: '0'},
     from: {marginLeft: '-240px'},
-    config: { duration: 550,  easing: easings.easeLinear }
+    config: { duration: 950,  easing: easings.easeLinear }
   })
   const moveRadial = useSpring({
     to: {transform: 'translateX(0) translateY(0)'},
     from: {transform: 'translateX(0px) translateY(600px)'},
-    config: {mass: 22,friction: 2, tension: 3, delay: 1000, easing: easings.easeBounceOut }
+    config: {mass: 32,friction: 2, tension: 1, easing: easings.easeBounceOut }
   })
 
   const invertBackground = shouldInvert => {

@@ -16,17 +16,17 @@ function LoginForm({
   const moveHeading = useSpring({
     to: {transform: 'translateY(0)'},
     from: {transform: 'translateY(-100px)'},
-    config: { duration: 900, easing: easings.easeLinear}
+    config: { duration: 600, easing: easings.easeLinear}
   })
   const moveSubheading= useSpring({
     to: {transform: 'translateY(0)'},
     from: {transform: 'translateY(-40px)'},
-    config: { duration: 300, easing: easings.easeLinear}
+    config: { duration: 200, easing: easings.easeLinear}
   })
   const moveButton = useSpring({
     to: {transform: 'translateX(0)'},
     from: {transform: 'translateX(150px)'},
-    config: { duration: 1500, easing: easings.easeElastic}
+    config: { duration: 1900, easing: easings.easeElastic}
   })
   return (
     <div className="login-form">

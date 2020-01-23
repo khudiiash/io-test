@@ -35,17 +35,17 @@ function LoginPage({reset,dashboard,history}) {
   const moveContent = useSpring({
     to: {transform: 'translateX(0)'},
     from: {transform: 'translateX(-300px)'},
-    config: { duration: 5000, easing: easings.easeElastic}
+    config: { duration: 400, easing: easings.easeElastic}
   })
-  const moveForm = useSpring({
-    to: [{marginLeft: '0'},{opacity: 1}],
-    from: {marginLeft: '100px', opacity: 0},
-    config: { duration: 650, easing: easings.easeSinIn}
-  })
-  const moveRadial = useSpring({
+  const moveGradient = useSpring({
     to: {marginLeft: '0'},
     from: {marginLeft: '-240px'},
     config: { duration: 850,  easing: easings.easeSinIn }
+  })
+  const moveRadial = useSpring({
+    to: {transform: 'translateX(0) translateY(0)'},
+    from: {transform: 'translateX(0px) translateY(600px)'},
+    config: { mass: 18,friction: 1, tension: 7, easing: easings.easeBounceOut }
   })
 
   const invertBackground = shouldInvert => {
@@ -65,10 +65,9 @@ function LoginPage({reset,dashboard,history}) {
   }
   return (
     <div className="login-page">
-      <animated.div style={moveRadial} className="login-page__gradient">
-        <div className="login-page__gradient-radial" id='radial'></div>
+      <animated.div style={moveGradient} className="login-page__gradient">
+        <animated.div style={moveRadial}className="login-page__gradient-radial" id='radial'></animated.div>
         <div className="login-page__gradient-blue-filter" id='blue-filter'></div>
-        
       </animated.div>
       <div className='login-page__blue-background'>
       <animated.div style={moveContent} className="login-page__blue-background__content">
@@ -90,9 +89,7 @@ function LoginPage({reset,dashboard,history}) {
         ? <Dashboard projects={sampleProjects}/> 
         : <LoginForm history={history}/>}
         </div>
-       
       </div>
-     
     </div>
   );
 }

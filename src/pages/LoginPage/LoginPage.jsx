@@ -68,20 +68,21 @@ function LoginPage({reset,dashboard,history}) {
       <animated.div style={moveRadial} className="login-page__gradient">
         <div className="login-page__gradient-radial" id='radial'></div>
         <div className="login-page__gradient-blue-filter" id='blue-filter'></div>
-        <animated.div style={moveContent} className="login-page__gradient__content">
-            <div className="login-page__gradient__content-logo">
+        
+      </animated.div>
+      <div className='login-page__blue-background'>
+      <animated.div style={moveContent} className="login-page__blue-background__content">
+            <div className="login-page__blue-background__content-logo">
                <img src={logo}></img>
                <p>Technologies</p>
             </div>
-        <p className='login-page__gradient__content-text'>Get how-to help and instructions or specific features in</p>
-        <div className='login-page__gradient__content-buttons'>
+        <p className='login-page__blue-background__content-text'>Get how-to help and instructions or specific features in</p>
+        <div className='login-page__blue-background__content-buttons'>
             <button onMouseOver={() => invertBackground(true)} onMouseLeave={() => invertBackground(false)}>HELP CENTER</button>
-            <p className='login-page__gradient__content-text'>or</p>
+            <p className='login-page__blue-background__content-text'>or</p>
             <button onMouseOver={() => invertBackground(true)} onMouseLeave={() => invertBackground(false)}>SUPPORT</button>
         </div>
         </animated.div>
-      </animated.div>
-      <div className='login-page__blue-background'>
         <div className="login-page__main-content">
         {reset
         ? <ResetForm history={history}/>

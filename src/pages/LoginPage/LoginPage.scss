@@ -11,49 +11,19 @@
       top: 24%;
     }
     &__blue-background {
-      position: absolute;
       width: 100%;
       height: 100%;
       bottom: 0;
       left: 0;
       background: rgb(4,16,44);
-      z-index: 1; 
-    }
-    &__gradient {
-        position: relative;
-        width: 100%;
-        height: 250%;
-        border-radius: 50%;
-        overflow: hidden;
-        left: -50%;
-        top: -75%;
-        bottom: -75%;
-        z-index: 2;
-      &-blue-filter {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom,rgb(63,166,221) 50%, transparent);
-        transition: 1.5s ease-in-out;
-      }
-      &-radial {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: repeating-radial-gradient(
-          circle at 130% -20%, 
-          rgb(90,140,217) 0px, 
-          rgb(103,92,198) 70px, 
-          rgb(102,99,202) 120px,
-          rgb(95,127,211) 0px,
-          rgb(103,92,198) 320px
-        );
-        transition: .9s ease-in-out;
-      }
+      z-index: 1;
       &__content {
         position: absolute;
-        top: 45.5%;
-        left: 59vw;
+        top: 37.5%;
+        width: 390px;
+        height: 25%;
+        left: 12vw;
+        z-index: 155;
         &-logo {
             display: flex;
             height: 50px;
@@ -97,11 +67,64 @@
                 cursor: pointer; 
             }
         }
+      } 
+    }
+    &__gradient {
+        position: absolute;
+        width: 100%;
+        height: 250%;
+        border-radius: 50%;
+        overflow: hidden;
+        left: -50%;
+        top: -75%;
+        bottom: -75%;
+        z-index: 2;
+      &-blue-filter {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom,rgb(63,166,221) 50%, transparent);
+        transition: 1.5s ease-in-out;
       }
+      &-radial {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: repeating-radial-gradient(
+          circle at 130% -20%, 
+          rgb(90,140,217) 0px, 
+          rgb(103,92,198) 70px, 
+          rgb(102,99,202) 120px,
+          rgb(95,127,211) 0px,
+          rgb(103,92,198) 320px
+        );
+        transition: .9s ease-in-out;
+      }
+  
     }
 }
 @media screen and (max-width:1000px) {
   .login-page {
+    &__blue-background {
+      &__content {
+        position: absolute;
+        width: 70vw;
+        text-align: center;
+        top: 0;
+        left: 15vw;
+        &-logo {
+          margin-bottom: -15px;
+        }
+        &-buttons {
+          margin-top: -15px;
+          button {
+            height: 25px;
+            padding: 5px 15px;
+          }
+        }
+        
+      }
+    }
       &__gradient {
         height: 100%;
         width: 250%;
@@ -120,23 +143,7 @@
             rgb(103,92,198) 320px
           );        
         }
-        &__content {
-          position: absolute;
-          top: 65vh;
-          left: 93vw;
-          &-logo {
-            margin-bottom: -15px;
-          }
-         
-          &-buttons {
-            margin-top: -15px;
-            button {
-              height: 25px;
-              padding: 5px 15px;
-            }
-          }
-          
-        }
+        
       }
       &__main-content {
         width: 70%;
@@ -150,6 +157,11 @@
   .login-page {
     &__gradient {
       display: none;
+  }
+  &__blue-background {
+    &__content {
+     display: none;
+    }
   }
   &__main-content{
     margin: 0;
@@ -166,10 +178,10 @@
 
 @media screen and (max-width:1000px) and (min-height:1000px) {
   .login-page {
-    &__gradient {
+    &__blue-background {
       &__content {
-        top: 75vh;
-        left: 97vw;
+        top: 10vh;
+        left: 15vw;
       }
     }
     

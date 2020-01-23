@@ -19,7 +19,7 @@ input {
     box-shadow: inset 0 0 0 50px rgb(4,16,44);
     caret-color: rgb(1,150,207);
     transition: border-bottom .5s;
-    
+   
     &:not(:placeholder-shown) {
     -webkit-text-fill-color: #fff;
     }
@@ -42,6 +42,14 @@ input {
   
     &:placeholder-shown {
     letter-spacing: normal;
+    }
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus, 
+    &:-webkit-autofill:active  {
+        -webkit-box-shadow: 0 0 0 600px rgb(4,16,44) inset !important;
+        background-color: rgb(4,16,44) !important;
+        background-clip: content-box !important; // Remove yellow background on autocomplete (iOS Safari)
     }
 }
 .form {
